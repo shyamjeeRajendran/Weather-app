@@ -6,7 +6,7 @@ function Weather() {
   let [data, setData] = useState({});
   let [error, setError] = useState("");
 
-  let apiKey = "c9165089d7b1fc85d0bca6efd30d1922";
+  let apiKey = import.meta.env.VITE_API_KEY;
 
   const getWeather = async () => {
     try {
@@ -61,7 +61,7 @@ function Weather() {
               <p className="font-bold">
                 Description: {data.weather?.[0]?.description}
               </p>
-              <p className="font-bold">Temprature: {data.main?.temp}</p>
+              <p className="font-bold">Temperature: {data.main?.temp}</p>
             </div>
           </div>
         </div>
