@@ -11,7 +11,7 @@ function Weather() {
   const getWeather = async () => {
     try {
       let geoCoder = await axios.get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`,
+        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`,
       );
 
       let { lat, lon } = geoCoder.data[0];
