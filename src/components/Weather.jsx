@@ -13,6 +13,11 @@ function Weather() {
       let geoCoder = await axios.get(
         `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`,
       );
+      if(!geoCoder.data || geoCoder.data.length ===0){
+        setError('city not found');
+        setData({});
+        return;
+      }
 
       let { lat, lon } = geoCoder.data[0];
 
